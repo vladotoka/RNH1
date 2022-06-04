@@ -2,14 +2,14 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import React, { useState } from 'react';
 
 const TextScreen = () => {
-	const [textInput, setTextInput] = useState('');
-	const inputHandler = (inputText) => { setTextInput(inputText) };
+	const [password, setPassword] = useState('');
+	const inputHandler = (inputText) => { setPassword(inputText) };
 
 	return (
 		<View>
-			<Text>Въведи име</Text>
-			<TextInput style={styles.input} autoCapitalize="none" autoCorrect={false} placeholder="име" onChangeText={inputHandler} />
-			<Text>{textInput}</Text>
+			<Text>Въведи парола</Text>
+			<TextInput style={styles.input} autoCapitalize="none" autoCorrect={false} value={password} placeholder="име" onChangeText={inputHandler} />
+			{password.length < 5 && <Text>Паролата трябва да е поне 5 символа ^^</Text>}
 		</View>
 	);
 };

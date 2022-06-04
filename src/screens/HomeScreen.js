@@ -46,7 +46,12 @@ const HomeScreen = ({ navigation }) => {
 					navigation.navigate('Text');
 				}}
 				title="Към демо текст"
-			/>
+			/><Button
+			onPress={() => {
+				navigation.navigate('Box');
+			}}
+			title="Към демо box"
+		/>
 		</View>
 	);
 };
